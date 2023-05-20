@@ -8,7 +8,8 @@ const Gist = ({
   LoadingComponent,
   ErrorComponent,
   onError,
-  onLoad
+  onLoad,
+  className
 }) => {
   const [gistContent, setGistContent] = React.useState('')
   const [gistIsFetching, setGistIsFetching] = React.useState(true)
@@ -102,7 +103,7 @@ const Gist = ({
   }
 
   return (
-    <div dangerouslySetInnerHTML={{ __html: sanitize(gistContent) }}/>
+    <div className={className} dangerouslySetInnerHTML={{ __html: sanitize(gistContent) }}/>
   )
 }
 
